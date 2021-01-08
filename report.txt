@@ -1,0 +1,28 @@
+Rapport
+
+Skriv en sammanhängande text där du beskriver hur och varför du använde olika Git-kommandon i
+din inlämningsuppgift.
+Nedan punkter ska du använda dig av för att skriva din rapport.
+
+ Beskriv hur du använde dig av Git i inlämningsuppgiften. Vilka Git-kommandon använde
+du och varför?
+
+git init
+    - för att skapa en ".git"-mapp i min projektmapp som jag sen kan ladda upp till Github
+git add --all
+    - för att stage:a filerna jag vill ha med i min commit
+git status
+    -för att se vilka filer som är stage:ade
+git rm --cached <filnamn>
+    - för att unstage:a de filer som IntelliJ har skapat som är irrelevanta att ladda upp
+git add <filnamn>
+    - för att stagea de filer som har nya förändringar sen senaste cimmit/stageingen
+
+ Vad är fördelen med att använda sig av pull requests när man arbetar i ett team av
+systemutvecklare?
+
+ Varför är det viktigt att använda sig av versionshantering? Vad var fördelarna i förhållande
+till inlämningsuppgiften? Vad är fördelarna med versionshantering och Git mer generellt
+sett?
+
+Ju mer utförlig din rapport är, ju lättare är det för läraren att ge dig de betyg du önskar.
