@@ -1,12 +1,5 @@
 Rapport
 
-Skriv en sammanhängande text där du beskriver hur och varför du använde olika Git-kommandon i
-din inlämningsuppgift.
-Nedan punkter ska du använda dig av för att skriva din rapport.
-
- Beskriv hur du använde dig av Git i inlämningsuppgiften. Vilka Git-kommandon använde
-du och varför?
-
 Jag använde mig av Git Bash i Windows och jag kodar i IntelliJ. Efter att jag hade skapat mina filer
 så använde jag [git init] för att skapa en ".git"-mapp i min projektmapp. Git-mappen innehåller projektets
 versionshistoria där varje commit har en unik hash-adress. Därefter skrev jag [git add --all] för att
@@ -35,72 +28,20 @@ För att skapa en pull request och mergea de två brancherna så använde jag h�
 från "important-changes"- branchen in i "main"-branchen, utan jag använde mig av GitHubs webbgränssnitt.
 
 Del 2
-Jag fick en länk till Jims repo som jag via GitHubs webbgränssnitt forkade så att jag hade en kopia av hans repo
+Jag fick tag i en länk till Jims repo som jag via GitHubs webbgränssnitt forkade så att jag hade en kopia av hans repo
 som jag konde förändra utan att det påverkade hans kod. Jag klonade detta kopierade repository från remote till local
-med [git clone ]
+med [git clone https://github.com/Bayesd/GitStuff.git]. Jag skapade an ny branch med [git checkout -b improvements].
+Därefter lade jag till funktionalitet att skilja på jämna och udda tal och pushade den nya branchen till origin
+med [git push --set-upstream origin improvements], jag vill minnas att jag inte behövde ge URL då origin
+definierades vid klonandet av remote repot. Jag gick sedan till Jims GitHub repo och skapade en pull request
+via GitHubs webbgränssnitt. Jag såg senare att Jim hade accepterat min pull request och att en merge hade ägt rum.
 
-git init
-    - för att skapa en ".git"-mapp i min projektmapp som jag sen kan ladda upp till Github
-      .git-mappen innehåller projektets versionshistoria. varje commit får en unik hash-adress
+Jim gjorde även en pull request på mitt remote repo som jag accepterade och gjorde en merge.
 
-git add --all
-    - för att stagea alla filer till min commit
+Nu när jag skriver rapport och frågor har jag behövt uppdatera mitt lokala repo med [git pull] för att kunna pusha
+förändringarna i questions.txt och report.txt.
 
-git status
-    - för att se vilka filer jag har stageat
-
-git rm --cached <filnamn>
-    - för att unstagea filer som IntelliJ har skapat som är irrelevanta att ladda upp
-
-git reset
-    - för att ta bort alla stageade filer, snabbare än ovan metod i detta fallet
-
-git add <filnamn>
-    - för att stagea de filer som jag vill ha med i commiten
-
-git commit -m "<meddelande>"
-    - för att skapa en commit i .git mappen samt lagra versionen med en kort beskrivning.
-
-git branch
-    - för att ta reda på vilken branch jag står i (default är "master" för Git)
-
-git branch -M main
-    - För att ändra branchen till "main" för att följa de politiskt korrekta riktlinjerna som
-      GitHub har satt upp, så att ingen blir förolämpad.
-      (Såg att jag har missat att den skulle pushas till master enligt instruktionerna)
-
-git remote add origin <URL till GitHub Repository>
-    - för att definiera vilken URL min remote server har.
-
-git push -u origin main
-    - pushar min commit till URLen som jag definierade i kommandot ovan,
-      "-u"- flaggan står för upstream.
-      ("git push -u origin master" om jag inte hade bytt till main branchen tidigare)
-
-git help
-    - öppnar en hjälpfil med förklaringar om de grundläggande kommandon i Git.
-
-git checkout -b <branchnamn>
-    - skapar en ny branch och går in i den branchen. shorthand för två kommandon:
-        git branch <branchnamn>
-            - skapar en ny branch
-        git checkout <branchnamn>
-            - går ut ur den nuvarande branchen och in i <branchnamn>-branch
-
-git push --set-upstream origin <branchnamn>
-    - pushar min commit till en ny branch i URLen som origin refererar till.
-      användes både för att pusha "important-changes" i del 1 samt "improvements" i del 2
-
-git clone <URL till GitHub repository>
-    - laddar ner en kopia av ett repository, användes för att klona forken som jag
-      gjorde av min kamrats GitHub repo.
-
-
- Vad är fördelen med att använda sig av pull requests när man arbetar i ett team av
-systemutvecklare?
-
-
-Framförallt för att ha möjlighet att göra code review på den pull requestade koden innan den
+Fördelen med att använda pull requests är att ha möjlighet att göra code review på den pull requestade koden innan den
 integreras in i en annan branch, t.ex main-branchen. Detta möjliggör att oönskad kod upptäcks och
 kan åtgärdas innan det ger upphov till buggar och andra problem.
 Pull requests, som jag förstår det, används i teams för att utvecklare ska lämna över sin kod för att
@@ -109,8 +50,16 @@ den vill merga med. På detta sättet delar många ansvaret att koden är korrek
 vilket förhoppningsvis förhindrar buggar och andra konsekvenser av dålig kod att komma med. Samt att det
 ger bra möjlighet att få feedback på sin kod.
 
-
- Varför är det viktigt att använda sig av versionshantering?
+Det görs tydligt med versionshantering vem som har gjort något och vad denna har gjort.
+Versionshantering med Git uppmanar utvecklare att göra commits när de har åstadkommit en förändring,
+samt att ge en kort beskrivning på denna förändring. Det tar inte mer än några sekunder att commita en
+version och skriva en kommentar men det kan spara många timmars arbete att ha en bra versionshistoria till
+förfogande i ett komplext projekt. Om en utvecklare ansluter till ett projekt som har löpt under en tid
+så har denna utvecklaren tillgång till projektets hela historia genom versionshistoriken. Detta kan vara
+väldigt bra för att sätta sig in i projektet och bli en produktiv medarbetare.
+Om det har rapporterats om buggar som behöver fixas så kan versionshanteringen visas ovärdelig eftersom det då kan
+återskapas precis den versionen som användes vid tiden buggarna upptäcktes. En senare version kanske gör
+att buggarna inte dyker upp på samma sätt och då kan avfärdas med möjlighet att ligga kvar och skapa oreda i projektet.
 
 Versionshantering är viktigt att använda sig av då det ger möjlighet att återskapa projektet
 till vilken tidigare commitad version som helst. Detta gäller åtminstone för git och annan programvara
@@ -124,26 +73,14 @@ det var för en månad sedan eller med funktionalitet som sedan länge försvunn
 Om ingen versionshantering har använts så finns det inget sätt att återskapa projektet till sin dåvarande
 utformning, allt måste skrivas om. Med Git så är det bara att leta upp rätt commit och återskapa rätt version.
 
-
-Vad var fördelarna i förhållande till inlämningsuppgiften?
-
-Smidigheten i att kunna trycka på en knapp och sen blir min kod förbättrad genom merging.
+Under arbetet med inlämninguppgiften har det varit smidigt att integrera Jims förbättringar av min kod med pull request
+samt att det gick väldigt enkelt att få en kopia av Jims projekt att kunna arbeta med utan att oroa mig att förstöra något.
+Bara på några sekunder fanns det 4 kopior av båda våras projekt, 2 lokala på våra datorer samt två remote på GitHub.
+Det är tydligt i historiken när Jim gjorde pull request och jag kan enkelt återskapa en äldre version av projektet om jag vill.
 Jag behövde inte själv klippa och klistra in kod manuellt. Jag fick också se markerat vad som skulle
 förändras om jag accepterade pull requesten så att jag inte behövde läsa igenom all kod igen.
-Det ger också Sebastian möjligheten att gå in och undersöka historiken i mitt GitHub repo och se att
-alla steg har genomförts vilket hade vart svårt att bevisa annars.
 
 
-Vad är fördelarna med versionshantering och Git mer generellt sett?
 
-Det görs tydligt med versionshantering vem som har gjort något och vad denna har gjort.
-Versionshantering med Git uppmanar utvecklare att göra commits när de har åstadkommit en förändring,
-samt att ge en kort beskrivning på denna förändring. Det tar inte mer än några sekunder att commita en
-version och skriva en kommentar men det kan spara många timmars arbete att ha en bra versionshistoria till
-förfogande i ett komplext projekt. Om en utvecklare ansluter till ett projekt som har löpt under en tid
-så har denna utvecklaren tillgång till projektets hela historia genom versionshistoriken. Detta kan vara
-väldigt bra för att sätta sig in i projektet och bli en produktiv medarbetare.
-Om det har rapporterats om buggar som behöver fixas så kan versionshanteringen visas ovärdelig eftersom det då kan
-återskapas precis den versionen som användes vid tiden buggarna upptäcktes. En senare version kanske gör
-att buggarna inte dyker upp på samma sätt och då kan avfärdas med möjlighet att ligga kvar och skapa oreda i projektet.
+
 
