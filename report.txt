@@ -27,7 +27,6 @@ när jag körde [git remote add origin].
 För att skapa en pull request och mergea de två brancherna så använde jag här inte terminalen för att skapa ett pull request
 från "important-changes"- branchen in i "main"-branchen, utan jag använde mig av GitHubs webbgränssnitt.
 
-Del 2
 Jag fick tag i en länk till Jims repo som jag via GitHubs webbgränssnitt forkade så att jag hade en kopia av hans repo
 som jag konde förändra utan att det påverkade hans kod. Jag klonade detta kopierade repository från remote till local
 med [git clone https://github.com/Bayesd/GitStuff.git]. Jag skapade an ny branch med [git checkout -b improvements].
